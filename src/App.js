@@ -3,6 +3,9 @@ import { Question } from './accordian/Question';
 import './App.css';
 import { Category } from './menu/Category';
 import { Menu } from './menu/Menu';
+import items from './menu/data'
+import Tabs from './tabs/Tabs';
+import { Slider } from './slider/Slider';
 //import data from './accordian/data';
 
 //import data from './birthday-reminder/data';
@@ -56,11 +59,29 @@ function App() {
   //   )
   // }
  // const [questions,setQuestions] = useState(data);
+ const allCategories =  ['all',...new Set(items.map((item) => item.category))]
+ console.log(allCategories)
+ const [menuItems,setMenuItems] = useState(items)
+ const [categories,setCategories] = useState(allCategories)
+ //console.log(items);
+ const filterItems = (category) => {
+  if(category === 'all'){
+    setMenuItems(items);
+    return;
+  }
+  let newItems = items.filter((item) => item.category === category)
+  setMenuItems(newItems);
+ }
+ 
   return (
-    <div className="w-full bg-[#4959a0] h-[980px] px-[550px]">
-      <p className='underline flex items-center justify-center py-10 text-2xl font-bold text-white'>
-        Menu project setup
+    <div className="w-full">
+      <Slider />
+      {/* <Tabs /> */}
+      {/* <p className='underline flex items-center justify-center py-4 text-2xl font-bold text-black'>
+        Our Menu
       </p>
+      <Category filterItems={filterItems} categories={categories}/>
+      <Menu items={menuItems}/> */}
       {/* <div className=' w-[800px] '>
         
         {questions.map((question)=> {

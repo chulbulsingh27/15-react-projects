@@ -11,6 +11,7 @@ import { LoremIpsum } from './lorem-ipsum/LoremIpsum';
 import { SingleColor } from './color-generator/SingleColor';
 import Values from 'values.js';
 import { Main } from './grocery-bud/Main';
+import { Navbar } from './navbar/Navbar';
 //import data from './accordian/data';
 
 //import data from './birthday-reminder/data';
@@ -95,8 +96,9 @@ function App() {
 
   return (
 
-    <div className="w-full py-8">
-      <Main />
+    <div className="w-full py-2">
+      {/* <Main /> */}
+      <Navbar />
 
       {/* <div className='flex flex-row items-center justify-center space-x-4'>
         <p className='text-2xl font-bold'>Color generator</p>

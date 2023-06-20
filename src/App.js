@@ -10,6 +10,7 @@ import { Slider } from './slider/Slider';
 import { LoremIpsum } from './lorem-ipsum/LoremIpsum';
 import { SingleColor } from './color-generator/SingleColor';
 import Values from 'values.js';
+import { Main } from './grocery-bud/Main';
 //import data from './accordian/data';
 
 //import data from './birthday-reminder/data';
@@ -63,7 +64,7 @@ function App() {
   //   )
   // }
   // const [questions,setQuestions] = useState(data);
-  const allCategories = ['all', ...new Set(items.map((item) => item.category))]
+  //const allCategories = ['all', ...new Set(items.map((item) => item.category))]
   //console.log(allCategories)
   //const [menuItems,setMenuItems] = useState(items)
   //const [categories,setCategories] = useState(allCategories)
@@ -95,7 +96,9 @@ function App() {
   return (
 
     <div className="w-full py-8">
-      <div className='flex flex-row items-center justify-center space-x-4'>
+      <Main />
+
+      {/* <div className='flex flex-row items-center justify-center space-x-4'>
         <p className='text-2xl font-bold'>Color generator</p>
         <form onSubmit={handleSubmit} className='space-x-4'>
           <input className='border-2 rounded-md ' type="text" value={color} onChange={(e) => setColor(e.target.value)} placeholder="#f15025" />
@@ -103,8 +106,8 @@ function App() {
 
         </form>
 
-      </div>
-      <div className='grid grid-cols-5 gap-5 p-6'>
+      </div> */}
+      {/* <div className='grid grid-cols-5 gap-5 p-6'>
         {
           lists.map((color, index) => {
             return (
@@ -115,7 +118,7 @@ function App() {
           })
         }
 
-      </div>
+      </div> */}
 
       {/* <SingleColor /> */}
       {/* <LoremIpsum /> */}
